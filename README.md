@@ -1,1 +1,0 @@
-# cq-lyceum-produto-autoteste
