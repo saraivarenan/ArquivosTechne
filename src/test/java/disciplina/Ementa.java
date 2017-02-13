@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import utilitários.Produto.InicializarFirefox;
-import utilitários.Produto.UtilidadesMetodos;
+import utilitarios.Produto.InicializarFirefox;
+import utilitarios.Produto.UtilidadesMetodos;
 
 public class Ementa extends InicializarFirefox {
 

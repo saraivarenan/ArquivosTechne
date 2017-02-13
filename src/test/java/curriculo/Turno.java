@@ -3,8 +3,8 @@ package curriculo;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import utilitários.Produto.InicializarFirefox;
-import utilitários.Produto.UtilidadesMetodos;
+import utilitarios.Produto.InicializarFirefox;
+import utilitarios.Produto.UtilidadesMetodos;
 
 public class Turno extends InicializarFirefox{
 

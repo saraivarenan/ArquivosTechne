@@ -1,4 +1,4 @@
-package utilitários.Produto;
+package utilitarios.Produto;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -7,6 +7,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.helpers.UtilLoggingLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class UtilidadesMetodos extends InicializarFirefox {
 		user.sendKeys("techne");
 		
 		WebElement pass = getDriver().findElement(By.id("j_password"));
-		pass.sendKeys("12345678");
+		pass.sendKeys("123456789");
 		pass.submit();
 	}
 	 public static void tempo(int tempoSegundos) {
@@ -116,6 +117,7 @@ public class UtilidadesMetodos extends InicializarFirefox {
 		  }
 	 
 	 public static void btnNovo(){
+		 UtilidadesMetodos.tempo(2);
 		 
 		 getDriver().findElement(By.xpath("//button[@class=' x-btn-text t-button plus']")).click();
 	 }

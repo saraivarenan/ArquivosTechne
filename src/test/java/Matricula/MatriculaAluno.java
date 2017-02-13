@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import utilitários.Produto.*;
+import utilitarios.Produto.*;
 
 
 public class MatriculaAluno extends InicializarFirefox{

@@ -4,8 +4,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import utilitários.Produto.InicializarFirefox;
-import utilitários.Produto.UtilidadesMetodos;
+import utilitarios.Produto.InicializarFirefox;
+import utilitarios.Produto.UtilidadesMetodos;
 
 public class ConceitosNotas extends InicializarFirefox {
 	
@@ -23,9 +23,10 @@ public class ConceitosNotas extends InicializarFirefox {
 	public void cadastrarConceito (){
 		
 		getDriver().get(getUrl() +"/Secretaria/Secretaria/configuracao/TCONF006D.tp");
+		
 		UtilidadesMetodos.users();
 		
-		UtilidadesMetodos.implicitWait(60);
+		UtilidadesMetodos.tempo(3);
 		UtilidadesMetodos.btnNovo();
 		
 		
