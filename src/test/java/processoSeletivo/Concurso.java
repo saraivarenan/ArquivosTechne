@@ -73,8 +73,10 @@ UtilidadesMetodos.buscaDrop(drp1Periodo, drpPeriodo);
 	getDriver().findElement(By.id("txtNumMaxOpcoes02")).sendKeys(numMaxopc);
 	
 	getDriver().findElement(By.id("ckbInscrAberta")).click();
-
+	
 	getDriver().findElement(By.id("ckbDisponivelWeb")).click();	
+	
+	getDriver().findElement(By.id("ckbAgendado")).click();
 	
 	UtilidadesMetodos.tempo(2);
 
