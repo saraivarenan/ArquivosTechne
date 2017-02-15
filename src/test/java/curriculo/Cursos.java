@@ -23,10 +23,10 @@ public class Cursos extends InicializarFirefox{
 		UtilidadesMetodos.implicitWait(60);
 		UtilidadesMetodos.btnNovo();
 		
-		getDriver().findElement(By.id("txtCurso")).sendKeys("Auto-CQ");
-		getDriver().findElement(By.id("txtNomeCurso")).sendKeys("Curso- CQ");
-		getDriver().findElement(By.id("txtMnemonico")).sendKeys("CQCur");
-		getDriver().findElement(By.id("txtTitulo")).sendKeys("Curso-Auto");
+		getDriver().findElement(By.id("txtCurso")).sendKeys(curso);
+		getDriver().findElement(By.id("txtNomeCurso")).sendKeys(nomeCurso);
+		getDriver().findElement(By.id("txtMnemonico")).sendKeys(cursoMne);
+		getDriver().findElement(By.id("txtTitulo")).sendKeys(titulo);
 		WebElement srcUnidadeResp = getDriver().findElement(By.id("srcUnidadeResp"));
 		srcUnidadeResp.sendKeys("1");
 		srcUnidadeResp.sendKeys(Keys.TAB);
