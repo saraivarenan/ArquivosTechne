@@ -51,6 +51,10 @@ public class InicializarFirefox {
 		url = "http://lyc-desenv:8080";
 		return url;
 	}
+	public static String getPSPortal (){
+		url = "http://localhost:8070/ProcessoSeletivo";
+		return url;
+	}
 	
 	
 

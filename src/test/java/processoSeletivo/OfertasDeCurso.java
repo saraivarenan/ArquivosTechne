@@ -41,7 +41,9 @@ public class OfertasDeCurso extends InicializarFirefox {
 		cursoPS.sendKeys(Keys.TAB);
 		WebElement drpTurno = getDriver().findElement(By.id("ddTurno"));
 		
+		
 		UtilidadesMetodos.buscaDrop(drpTurno, "NOTURNO");
+		UtilidadesMetodos.tempo(2);
 		WebElement ddCurriculo = getDriver().findElement(By.id("ddCurriculo"));
 		ddCurriculo.clear();
 		ddCurriculo.sendKeys("001");
@@ -51,6 +53,36 @@ public class OfertasDeCurso extends InicializarFirefox {
 		UtilidadesMetodos.tempo(3);
 		UtilidadesMetodos.btnSalvar();
 		UtilidadesMetodos.tempo(2);
+		
+		//Bolco Oferta
+		
+	/*	getDriver().findElement(By.xpath("//div[2]/div/table/tbody/tr/td/table/tbody/tr/td[5]/table/tbody/tr[2]/td[2]/em/button")).click();
+		
+		getDriver().findElement(By.id("txtOpcao02")).sendKeys("1");;
+		getDriver().findElement(By.id("txtHorarioDescricao02")).sendKeys("Oferta CQ 1");;
+		WebElement srcUni =getDriver().findElement(By.id("srcUnidadeEns"));
+		srcUni.sendKeys("2");
+		srcUni.sendKeys(Keys.TAB);
+		WebElement srcDisc = getDriver().findElement(By.id("srcDisciplina2"));
+		srcDisc.sendKeys("00001");
+		srcDisc.sendKeys(Keys.TAB);
+		
+		WebElement dropTurma = getDriver().findElement(By.id("ddTurma"));
+		UtilidadesMetodos.buscaDrop(dropTurma, "deb");
+		
+		UtilidadesMetodos.tempo(3);
+		
+		getDriver().findElement(By.id("//div[3]/div[2]/div/div/div/div[2]/div/table/tbody/tr/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/em/button")).click();
+		
+		UtilidadesMetodos.tempo(2); */
+		
+		getDriver().findElement(By.id("lkmInsereGradeOpcoesOferta:text")).click();
+		UtilidadesMetodos.tempo(2);
+		getDriver().findElement(By.xpath("//button[contains(text(), 'OK')]")).click();
+		UtilidadesMetodos.tempo(2);
+		
 	}
+	
+	
 
 }

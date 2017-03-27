@@ -28,8 +28,7 @@ public class Area extends InicializarFirefox {
 		UtilidadesMetodos.btnSalvar();
 		UtilidadesMetodos.tempo(2);
 		
+		
 	
 	}
-	
-}
-
+	}
