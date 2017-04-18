@@ -22,9 +22,6 @@ public class CadastroComposicaoCodTurma  extends InicializarFirefox{
 		UtilidadesMetodos.tempo(2);
 		UtilidadesMetodos.btnSalvar();
 		UtilidadesMetodos.tempo(7);
-		
-		
-	
 	
 		//registro contador
 	getDriver().findElement(By.xpath("//div[4]/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/table/tbody/tr/td/table/tbody/tr/td[5]/table/tbody/tr[2]/td[2]/em/button")).click();
