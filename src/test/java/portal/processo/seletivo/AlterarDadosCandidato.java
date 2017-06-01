@@ -5,10 +5,14 @@ import org.openqa.selenium.By;
 
 import utilitarios.Produto.InicializarFirefox;
 import utilitarios.Produto.UtilidadesMetodos;
+import variaveis.produto.ProcessoSeletivoCadastroCandVAr;
 
 public class AlterarDadosCandidato extends InicializarFirefox {
+	ProcessoSeletivoCadastroCandVAr psCandidato = new ProcessoSeletivoCadastroCandVAr ();
 	
-	String userPortal  = Candidato.emailTxt;
+	public String emailCandidato = psCandidato.geraEmail();
+	
+	
 	@Test
 	public void alterarDados (){
 		
@@ -16,8 +20,9 @@ public class AlterarDadosCandidato extends InicializarFirefox {
 
 		UtilidadesMetodos.implicitWait(30);
 		getDriver().findElement(By.xpath("//*[contains(text(), ' Login ')]")).click();
-		UtilidadesMetodos.implicitWait(30);
-		getDriver().findElement(By.id("j_username")).sendKeys("teste2326@6001.com");
+		
+		getDriver().findElement(By.id("j_username")).sendKeys(emailCandidato);
+		System.out.println( "Alterar: "+emailCandidato);
 		getDriver().findElement(By.id("j_password")).sendKeys("123456789");
 		getDriver().findElement(By.id("j_enter")).click();
 		
@@ -30,7 +35,6 @@ public class AlterarDadosCandidato extends InicializarFirefox {
 		
 		UtilidadesMetodos.implicitWait(60);
 		getDriver().findElement(By.id("tipoPessoa")).click();
-		
 		UtilidadesMetodos.tempo(6);
 		
 	
@@ -39,7 +43,7 @@ public class AlterarDadosCandidato extends InicializarFirefox {
 		getDriver().findElement(By.id("telefone")).sendKeys("222");
 		getDriver().findElement(By.id("celular")).sendKeys("2222222");
 		getDriver().findElement(By.id("email")).clear();
-		getDriver().findElement(By.id("email")).sendKeys(userPortal+".edit");
+		getDriver().findElement(By.id("email")).sendKeys(emailCandidato+".edit");
 		UtilidadesMetodos.tempo(3);	
 	
 		getDriver().findElement(By.id("frm-pessoa-fisica")).submit();

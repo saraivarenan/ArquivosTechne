@@ -10,6 +10,7 @@ import utilitarios.Produto.UtilidadesMetodos;
 
 public class Serie extends InicializarFirefox {
 	
+	
 	@Test
 	public void cadastrarSerieCurr (){
 		

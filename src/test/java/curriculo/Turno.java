@@ -5,8 +5,10 @@ import org.openqa.selenium.By;
 
 import utilitarios.Produto.InicializarFirefox;
 import utilitarios.Produto.UtilidadesMetodos;
+import variaveis.produto.TurnoVar;
 
 public class Turno extends InicializarFirefox{
+TurnoVar varTurnos = new TurnoVar();
 
 	@Test
 	public void cadastroTurno (){
@@ -16,16 +18,14 @@ public class Turno extends InicializarFirefox{
 		UtilidadesMetodos.implicitWait(60);
 		UtilidadesMetodos.btnNovo();
 		
-		getDriver().findElement(By.id("txbTurno")).sendKeys("Ascript");
-		getDriver().findElement(By.id("txbMnemonico")).sendKeys("AS");
-		getDriver().findElement(By.id("txbDescricao")).sendKeys("Script de automação CQ");
-		getDriver().findElement(By.id("txbHaraInicio")).sendKeys("0000");
-		getDriver().findElement(By.id("txbHoraFim")).sendKeys("1200");
+		getDriver().findElement(By.id("txbTurno")).sendKeys(varTurnos.getTxbTurno());
+		getDriver().findElement(By.id("txbMnemonico")).sendKeys(varTurnos.getTxbMnemonico());
+		getDriver().findElement(By.id("txbDescricao")).sendKeys(varTurnos.getTxbDescricao());
+		getDriver().findElement(By.id("txbHaraInicio")).sendKeys(varTurnos.getTxbHaraInicio());
+		getDriver().findElement(By.id("txbHoraFim")).sendKeys(varTurnos.getTxbHoraFim());
 		
 		UtilidadesMetodos.btnSalvar();
 		UtilidadesMetodos.tempo(3);
-		
-	
 		
 	}
 }

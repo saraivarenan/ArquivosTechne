@@ -36,9 +36,7 @@ public class InicializarFirefox {
 	@After
 	public void fecharNavegador(){
         driver.quit();
-	  
-	
-	        
+	     
 
 	}
 	
@@ -52,7 +50,7 @@ public class InicializarFirefox {
 		return url;
 	}
 	public static String getPSPortal (){
-		url = "http://localhost:8070/ProcessoSeletivo";
+		url = "http://lyc-desenv:7030/processoseletivo";
 		return url;
 	}
 	

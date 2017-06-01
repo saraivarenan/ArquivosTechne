@@ -18,7 +18,7 @@ public class CadastroComposicaoCodTurma  extends InicializarFirefox{
 		UtilidadesMetodos.implicitWait(30);
 		UtilidadesMetodos.btnNovo();
 		getDriver().findElement(By.id("txbCodigo")).sendKeys("Grupo-Comp");
-		getDriver().findElement(By.id("txbDescricao")).sendKeys("Grupo de composição  de turma automatico");
+		getDriver().findElement(By.id("txbDescricao")).sendKeys("Grupo de comp  de turma automatico");
 		UtilidadesMetodos.tempo(2);
 		UtilidadesMetodos.btnSalvar();
 		UtilidadesMetodos.tempo(7);
