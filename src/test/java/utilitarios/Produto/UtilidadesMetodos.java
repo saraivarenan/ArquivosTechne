@@ -21,7 +21,7 @@ public class UtilidadesMetodos extends InicializarFirefox {
 		user.sendKeys("techne");
 		
 		WebElement pass = getDriver().findElement(By.id("j_password"));
-		pass.sendKeys("123456789");
+		pass.sendKeys("techne1");
 		pass.submit();
 	}
 	 public static void tempo(int tempoSegundos) {
@@ -34,6 +34,16 @@ public class UtilidadesMetodos extends InicializarFirefox {
 		  }
 
 		 }
+	 
+	 public static boolean elementoExiste(By by){
+		    try {
+		        getDriver().findElement(by);
+		        return true;
+		    }
+		    catch (org.openqa.selenium.NoSuchElementException e){
+		        return false;
+		    }
+		}
  
 	 public static void buscaDropReverso(WebElement ElementoDrp, String ValorComparado) {
 
