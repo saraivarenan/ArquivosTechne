@@ -5,15 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilitarios.Produto.InicializarFirefox;
 import utilitarios.Produto.UtilidadesMetodos;
 import variaveis.produto.CursoVar;
 
-public class ValorPorCurso extends InicializarFirefox {
-	
+public class ValorPorDisciplina extends InicializarFirefox {
+
 
 	
 	@Test
@@ -105,5 +104,5 @@ public class ValorPorCurso extends InicializarFirefox {
 			
 		
 	}
-
+	
 }
