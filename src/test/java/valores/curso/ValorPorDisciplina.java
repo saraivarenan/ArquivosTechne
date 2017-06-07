@@ -5,11 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilitarios.Produto.InicializarFirefox;
 import utilitarios.Produto.UtilidadesMetodos;
-import variaveis.produto.CursoVar;
+import variaveis.produto.ValoresCursosDisciplinaSerie;
 
 public class ValorPorDisciplina extends InicializarFirefox {
 
@@ -17,16 +16,14 @@ public class ValorPorDisciplina extends InicializarFirefox {
 	
 	@Test
 	public void cadastrarServiçoCurso (){
-		
-		CursoVar varCurso = new CursoVar();
-		WebDriverWait wa =  new WebDriverWait(getDriver(), 3);
-		
+		ValoresCursosDisciplinaSerie valorVar = new ValoresCursosDisciplinaSerie();
+			
 		
 		getDriver().get("http://cq-virt:8080/Secretaria/Secretaria/configuracao/TCONF024D.tp");
 		UtilidadesMetodos.users();
 		
 		UtilidadesMetodos.tempo(4);
-		getDriver().findElement(By.id("sboCurso")).sendKeys( "00023"/*varCurso.getCurso()*/, Keys.TAB);
+		getDriver().findElement(By.id("sboCurso")).sendKeys( "00023"/*valorVar.getCurso()*/, Keys.TAB);
 		UtilidadesMetodos.tempo(2);
 
 	boolean existe = UtilidadesMetodos.elementoExiste(By.xpath("//*[contains(@class, 'x-grid3-cell-inner x-grid3-col-fldCurso')]"));
@@ -34,11 +31,11 @@ public class ValorPorDisciplina extends InicializarFirefox {
 		if ( existe == true){
 			
 			WebElement drpTurno = getDriver().findElement(By.id("ddoTurno"));
-			UtilidadesMetodos.buscaDrop(drpTurno, "CQ-2016 - Controle de Qualidade");
+			UtilidadesMetodos.buscaDrop(drpTurno, /*valorVar.getTurnoValor() */ "CQ-2016 - Controle de Qualidade");
 			
 			WebElement drpCurriculo = getDriver().findElement(By.id("ddoCurriculo"));
 			
-			UtilidadesMetodos.buscaDrop(drpCurriculo, "TES-Cont");
+			UtilidadesMetodos.buscaDrop(drpCurriculo, /*valorVar.getCurriculoValor()*/ "TES-Cont");
 			UtilidadesMetodos.tempo(2);
 			Actions ac = new Actions(getDriver());
 			WebElement dropServico = getDriver().findElement(By.xpath("//*[contains(@class, 'x-grid3-cell-inner x-grid3-col-tbfServico')]"));
@@ -48,7 +45,7 @@ public class ValorPorDisciplina extends InicializarFirefox {
 			
 			WebElement servicoDrop=  getDriver().switchTo().activeElement();
 			servicoDrop.clear();
-			servicoDrop.sendKeys("EV");
+			servicoDrop.sendKeys(valorVar.getServicoValor(),"EV");
 			UtilidadesMetodos.tempo(2);
 			servicoDrop.sendKeys(Keys.ENTER);
 			UtilidadesMetodos.tempo(2);
@@ -64,7 +61,7 @@ public class ValorPorDisciplina extends InicializarFirefox {
 			
 			UtilidadesMetodos.btnNovo();
 			
-			getDriver().findElement(By.id("srcCurso")).sendKeys(varCurso.getCurso(), Keys.TAB);
+			getDriver().findElement(By.id("srcCurso")).sendKeys(valorVar.getCursoValor(), Keys.TAB);
 			UtilidadesMetodos.tempo(2);
 			 WebElement drpTipoCob = getDriver().findElement(By.id("txbValorCredAssocDisc"));
 			 UtilidadesMetodos.buscaDrop(drpTipoCob, "Disciplina");
@@ -73,11 +70,11 @@ public class ValorPorDisciplina extends InicializarFirefox {
 			UtilidadesMetodos.tempo(3);
 			
 			WebElement drpTurno = getDriver().findElement(By.id("ddoTurno"));
-			UtilidadesMetodos.buscaDrop(drpTurno, "CQ-2016 - Controle de Qualidade");
+			UtilidadesMetodos.buscaDrop(drpTurno,  /*valorVar.getTurnoValor() */  "CQ-2016 - Controle de Qualidade");
 			
 			WebElement drpCurriculo = getDriver().findElement(By.id("ddoCurriculo"));
 			
-			UtilidadesMetodos.buscaDrop(drpCurriculo, "TES-Cont");
+			UtilidadesMetodos.buscaDrop(drpCurriculo, /*valorVar.getCurriculoValor()*/ "TES-Cont");
 			UtilidadesMetodos.tempo(2);
 			Actions ac = new Actions(getDriver());
 			WebElement dropServico = getDriver().findElement(By.xpath("//*[contains(@class, 'x-grid3-cell-inner x-grid3-col-tbfServico')]"));
@@ -87,7 +84,7 @@ public class ValorPorDisciplina extends InicializarFirefox {
 			
 			WebElement servicoDrop=  getDriver().switchTo().activeElement();
 			servicoDrop.clear();
-			servicoDrop.sendKeys("EV");
+			servicoDrop.sendKeys(valorVar.getServicoValor(),"EV");
 			UtilidadesMetodos.tempo(2);
 			servicoDrop.sendKeys(Keys.ENTER);
 			UtilidadesMetodos.tempo(2);

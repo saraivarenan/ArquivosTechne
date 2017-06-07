@@ -21,7 +21,7 @@ public class UtilidadesMetodos extends InicializarFirefox {
 		user.sendKeys("techne");
 		
 		WebElement pass = getDriver().findElement(By.id("j_password"));
-		pass.sendKeys("techne1");
+		pass.sendKeys("123456789");
 		pass.submit();
 	}
 	 public static void tempo(int tempoSegundos) {

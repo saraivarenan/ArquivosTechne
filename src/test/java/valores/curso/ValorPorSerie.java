@@ -10,13 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilitarios.Produto.InicializarFirefox;
 import utilitarios.Produto.UtilidadesMetodos;
 import variaveis.produto.CursoVar;
+import variaveis.produto.ValoresCursosDisciplinaSerie;
 
 public class ValorPorSerie extends InicializarFirefox {
 
 	
 	@Test
 	public void cadastrarServiçoCurso (){
-		
+		ValoresCursosDisciplinaSerie valorVar = new ValoresCursosDisciplinaSerie();
 		CursoVar varCurso = new CursoVar();
 		WebDriverWait wa =  new WebDriverWait(getDriver(), 3);
 		
@@ -33,11 +34,11 @@ public class ValorPorSerie extends InicializarFirefox {
 		if ( existe == true){
 			
 			WebElement drpTurno = getDriver().findElement(By.id("ddoTurno"));
-			UtilidadesMetodos.buscaDrop(drpTurno, "CQ-2016 - Controle de Qualidade");
+			UtilidadesMetodos.buscaDrop(drpTurno,  /*valorVar.getTurnoValor()*/  "CQ-2016 - Controle de Qualidade");
 			
 			WebElement drpCurriculo = getDriver().findElement(By.id("ddoCurriculo"));
 			
-			UtilidadesMetodos.buscaDrop(drpCurriculo, "TES-Cont");
+			UtilidadesMetodos.buscaDrop(drpCurriculo,  /*valorVar.getCurriculoValor()*/ "TES-Cont");
 			UtilidadesMetodos.tempo(2);
 			Actions ac = new Actions(getDriver());
 			WebElement dropServico = getDriver().findElement(By.xpath("//*[contains(@class, 'x-grid3-cell-inner x-grid3-col-tbfServico')]"));
@@ -47,7 +48,7 @@ public class ValorPorSerie extends InicializarFirefox {
 			
 			WebElement servicoDrop=  getDriver().switchTo().activeElement();
 			servicoDrop.clear();
-			servicoDrop.sendKeys("EV");
+			servicoDrop.sendKeys(valorVar.getServicoValor());
 			UtilidadesMetodos.tempo(2);
 			servicoDrop.sendKeys(Keys.ENTER);
 			UtilidadesMetodos.tempo(2);
@@ -72,11 +73,11 @@ public class ValorPorSerie extends InicializarFirefox {
 			UtilidadesMetodos.tempo(3);
 			
 			WebElement drpTurno = getDriver().findElement(By.id("ddoTurno"));
-			UtilidadesMetodos.buscaDrop(drpTurno, "CQ-2016 - Controle de Qualidade");
+			UtilidadesMetodos.buscaDrop(drpTurno, /*valorVar.getTurnoValor()*/ "CQ-2016 - Controle de Qualidade");
 			
 			WebElement drpCurriculo = getDriver().findElement(By.id("ddoCurriculo"));
 			
-			UtilidadesMetodos.buscaDrop(drpCurriculo, "TES-Cont");
+			UtilidadesMetodos.buscaDrop(drpCurriculo, /*valorVar.getCurriculoValor()*/ "TES-Cont");
 			UtilidadesMetodos.tempo(2);
 			Actions ac = new Actions(getDriver());
 			WebElement dropServico = getDriver().findElement(By.xpath("//*[contains(@class, 'x-grid3-cell-inner x-grid3-col-tbfServico')]"));
@@ -86,7 +87,7 @@ public class ValorPorSerie extends InicializarFirefox {
 			
 			WebElement servicoDrop=  getDriver().switchTo().activeElement();
 			servicoDrop.clear();
-			servicoDrop.sendKeys("EV");
+			servicoDrop.sendKeys(valorVar.getServicoValor());
 			UtilidadesMetodos.tempo(2);
 			servicoDrop.sendKeys(Keys.ENTER);
 			UtilidadesMetodos.tempo(2);
